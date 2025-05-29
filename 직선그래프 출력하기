@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while (t--)
+    {
+        int k;
+        cin>>k;
+        for(int j=0; j<k; j++)
+        {
+            if(j == (k/2))
+            {
+                for(int a = 0; a < k; a++)
+                {
+                    if(a == k/2)
+                    {
+                        cout << "O";
+                    }
+                    else cout << "+";
+                }
+            }
+            else
+            {
+                for(int a = 0; a < k; a++)
+                {
+                    if(a == k-1-j)
+                    {
+                        cout << "*";
+                    }
+                    else if(a == k/2)
+                    {
+                        cout << "I";
+                    }
+                    else cout << ".";
+                }
+            }
+            cout << "\n";
+        }
+    }
+    
+    return 0;
+}
