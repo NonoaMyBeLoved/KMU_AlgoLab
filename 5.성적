@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        int doro[100];
+        for(int j = 0; j < n; j++)
+        {
+            cin >> doro[j];
+        }
+        int a=0, b=0, c=0, d=0, f=0;
+        for(int j = 0; j < n; j++)
+        {
+            if(doro[j]/10 == 10 || doro[j]/10 == 9) a++;
+            else if(doro[j]/10 == 8) b++;
+            else if(doro[j]/10 == 7) c++;
+            else if(doro[j]/10 == 6) d++;
+            else f++;
+        }
+        cout << a << " " << b << " " << c << " " << d << " " << f << "\n"; 
+    }
+    
+    return 0;
+}
+
