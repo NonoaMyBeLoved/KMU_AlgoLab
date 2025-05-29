@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    for(int i=0; i<t; i++)
+    {
+        int n;
+        int gawi = 0, bawi = 0, bow = 0;
+        cin >> n;
+        for(int j=0; j<n; j++)
+        {
+            int ryo;
+            cin >> ryo;
+            if(ryo == 1) gawi++;
+            else if(ryo == 2) bawi++;
+            else if (ryo == 3) bow++;
+        }
+        int doro;
+        if(gawi>0 && bawi>0 && bow>0) doro = 0;
+        else if(gawi>0 && bawi>0 && bow==0) doro = bawi;
+        else if(gawi<0 && bawi==0 && bow>0) doro = gawi;
+        else if(gawi==0 && bawi>0 && bow>0) doro = bow;
+        else if((gawi>0 && bawi==0 && bow==0) || (gawi==0 && bawi>0 && bow==0) || 
+        (gawi==0 && bawi==0 && bow>0)) doro = 0;
+        cout << doro <<"\n";
+    }
+    
+    return 0;
+}
