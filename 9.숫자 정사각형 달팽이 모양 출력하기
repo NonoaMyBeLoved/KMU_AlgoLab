@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        int n, a, b;
+        cin >> n >> a >> b;
+
+        int MentalBasasak[1001][1001];
+        int yamada = 1; // 1부터 시작~~~~~~~~~~~
+
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                MentalBasasak[i][j] = yamada++;
+            }
+        }
+        
+        int top = 0, bottom = n - 1;
+        int left = 0, right = n - 1;
+        int doro = 0;
+
+        while (doro < b)
+        {            
+            for (int i = left; i <= right && doro < b; i++) {
+                doro++;
+                if (doro >= a) cout << MentalBasasak[top][i] << " ";
+            }
+            top++;
+            
+            for (int i = top; i <= bottom && doro < b; i++) {
+                doro++;
+                if (doro >= a) cout << MentalBasasak[i][right] << " ";
+            }
+            right--;
+            
+            for (int i = right; i >= left && doro < b; i--) {
+                doro++;
+                if (doro >= a) cout << MentalBasasak[bottom][i] << " ";
+            }
+            bottom--;
+            
+            for (int i = bottom; i >= top && doro < b; i--) {
+                doro++;
+                if (doro >= a) cout << MentalBasasak[i][left] << " ";
+            }
+            left++;
+        }
+        cout << "\n";
+    }
+
+    return 0;
+}
