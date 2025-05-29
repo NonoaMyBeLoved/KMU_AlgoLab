@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    for(int i=0; i < t; i++)
+    {
+        int n, doro[100];
+        cin >> n;
+        for(int j = 0; j < n; j++)
+        {
+            cin >> doro[j];
+        }
+        long long ryo = 1;
+        for(int j = 0; j < n; j++)
+        {
+            ryo *= doro[j];
+            ryo %= 10;
+        }
+        cout << ryo << "\n";
+    }
+    
+    return 0;
+}
