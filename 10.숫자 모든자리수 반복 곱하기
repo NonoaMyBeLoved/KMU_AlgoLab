@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+    for (int i = 0; i < t; i++)
+    {
+        string doro;
+        cin >> doro;
+        while (doro.length() > 1)
+        {
+            int yamada = 1;
+            for (int j = 0; j < doro.length(); j++)
+            {
+                if (doro[j] != '0') yamada *= (doro[j] - '0');
+            }
+            doro = to_string(yamada);
+        }
+        cout << doro << "\n";
+
+    }
+    return 0;
+}
